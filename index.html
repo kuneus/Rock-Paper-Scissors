@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Rock-Paper-Scissors</title>
+    </head>
+    <body>
+
+    </body>
+    <script>
+        console.log("Hello world!");
+        
+        const choices = [
+            "rock", 
+            "paper", 
+            "scissors"
+        ];
+        function getComputerChoice(choices) {
+            return choices[Math.floor(Math.random()*choices.length)];
+        }
+        function getUserChoice() {
+            prompt("Rock, paper, or scissors?","");
+        }
+
+        const playerSelection = getUserChoice();
+        const computerSelection = getComputerChoice(choices);
+        console.log(computerSelection);
+        function playRound(playerSelection, computerSelection) {
+            //code here//
+            if (playerSelection == "rock" && computerSelection == "scissors") {
+                return "You win! Rock beats scissors!";
+            } else if (playerSelection == "scissors" && computerSelection == "paper") {
+                return "You win! Scissors beats paper!";
+            } else if (playerSelection == "paper" && computerSelection == "rock") {
+                return "You win! Paper beats rock!";
+            } else {
+                return "You lose!";
+            }
+
+        }
+        console.log(playRound(playerSelection, computerSelection));
+        //function declareRound
+        //function declareGame
+
+        //the following is pseudocode//
+        //allow user to input one of three options: rock, paper, or scissors
+        //Computer to respond with one of three options: rock, paper, or scissors
+            //options must be case-insensitive
+        //create conditional rules: rock beats scissors, scissors beat paper, paper beats rock
+        //if same choice is made, it is a tie
+        //if it is a tie, then there is a re-do
+        //if there is a round loss, show message that states why the loss occurred. 
+        //if there is a round win, show message that states why the win occurred
+        //create a way to keep track of wins and losses for each player
+        //first to five wins the game
+        //if you win or lose the game, show message stating outcome
+    </script>
+</html>

@@ -1,0 +1,1 @@
+This is my first Javascript project for The Odin Project-- the classic Rock-Paper-Scissors game! 
