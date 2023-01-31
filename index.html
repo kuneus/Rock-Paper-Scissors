@@ -21,24 +21,35 @@
         function getUserChoice() {
             prompt("Rock, paper, or scissors?","");
         }
+       
+   
+    
+        const playerSelection = prompt("Rock, paper, or scissors?","");
+        let lowerCaseSelection = playerSelection.toLowerCase();
 
-        const playerSelection = getUserChoice();
         const computerSelection = getComputerChoice(choices);
         console.log(computerSelection);
-        function playRound(playerSelection, computerSelection) {
-            //code here//
-            if (playerSelection == "rock" && computerSelection == "scissors") {
-                return "You win! Rock beats scissors!";
-            } else if (playerSelection == "scissors" && computerSelection == "paper") {
-                return "You win! Scissors beats paper!";
-            } else if (playerSelection == "paper" && computerSelection == "rock") {
-                return "You win! Paper beats rock!";
-            } else {
-                return "You lose!";
-            }
 
+        function playRound(lowerCaseSelection, computerSelection) {
+            if (lowerCaseSelection == "rock" && computerSelection == "scissors") {
+                return "You win! Rock beats scissors!";
+            } else if (lowerCaseSelection == "rock" && computerSelection == "paper") {
+                return "You lose! Paper beats rock!";
+            } else if (lowerCaseSelection == "scissors" && computerSelection == "paper") {
+                return "You win! Scissors beats paper!";
+            }else if (lowerCaseSelection == "scissors" && computerSelection == "rock") {
+                return "You lose! Rock beats scissors!";
+            } else if (lowerCaseSelection == "paper" && computerSelection == "rock") {
+                return "You win! Paper beats rock!";
+            } else if (lowerCaseSelection == "paper" && computerSelection == "scissors") {
+                return "You lose! Scissors beat paper!";
+            } else if (lowerCaseSelection == computerSelection) {
+                return "Tie! Try again";
+            } else {
+                return "Invalid input. Try again"
+            }
         }
-        console.log(playRound(playerSelection, computerSelection));
+        console.log(playRound(lowerCaseSelection, computerSelection));
         //function declareRound
         //function declareGame
 
