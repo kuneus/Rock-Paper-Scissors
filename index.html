@@ -8,8 +8,9 @@
 
     </body>
     <script>
-        console.log("Hello world!");
+        console.log("Let's play rock, paper, scissors!");
         
+        //functions and variables for player and computer selection
         const choices = [
             "rock", 
             "paper", 
@@ -18,35 +19,79 @@
         function getComputerChoice(choices) {
             return choices[Math.floor(Math.random()*choices.length)];
         }
-       
-   
     
         const playerSelection = prompt("Rock, paper, or scissors?","");
         let lowerCaseSelection = playerSelection.toLowerCase();
-
+        console.log("You played " + playerSelection); //to confirm player's choice
         const computerSelection = getComputerChoice(choices);
-        console.log(computerSelection);
+        console.log("The computer played " + computerSelection); //to confirm computer's choice
 
+
+        //function to play one round
         function playRound(lowerCaseSelection, computerSelection) {
             if (lowerCaseSelection == "rock" && computerSelection == "scissors") {
-                return "You win! Rock beats scissors!";
+                return winRound;
             } else if (lowerCaseSelection == "rock" && computerSelection == "paper") {
-                return "You lose! Paper beats rock!";
+                return loseRound;
             } else if (lowerCaseSelection == "scissors" && computerSelection == "paper") {
-                return "You win! Scissors beats paper!";
+                return winRound;
             }else if (lowerCaseSelection == "scissors" && computerSelection == "rock") {
-                return "You lose! Rock beats scissors!";
+                return loseRound;
             } else if (lowerCaseSelection == "paper" && computerSelection == "rock") {
-                return "You win! Paper beats rock!";
+                return winRound;
             } else if (lowerCaseSelection == "paper" && computerSelection == "scissors") {
-                return "You lose! Scissors beat paper!";
+                return loseRound;
             } else if (lowerCaseSelection == computerSelection) {
-                return "Tie! Try again";
+                return tieRound;
             } else {
                 return "Invalid input. Try again"
             }
         }
+
+        //variables to define wins, losses, and score
+        const winRound = "You win this round!";
+        const loseRound = "You lose this round!";
+        const tieRound = "Tie! Try again";
+        let playerScore = 0;
+        let computerScore = 0;
+        let tieScore = 0;
+
+
+        //function to keep track of score
+        function addScore() {
+            let roundResult = playRound(lowerCaseSelection, computerSelection);
+            if (roundResult == winRound) {
+                playerScore++;
+            } else if (roundResult == loseRound) {
+                computerScore++;
+            } else {
+                tieScore++;
+            }
+        }
+        
         console.log(playRound(lowerCaseSelection, computerSelection));
+        console.log(addScore());
+        console.log("Player score: " + playerScore);
+        console.log("Computer score: " + computerScore);
+        console.log("Ties: " + tieScore);
+
+        function playGame () {
+            //create function to retrieve player score
+                //function getPlayerScore =
+            //create function to retrieve computer score
+                //function getComputerScore =
+            //let playerScore = 
+            //let computerScore =
+            //function keepScore ()
+            //create function with 2 conditional parameters, if playerScore reaches 5 or if computerScore reaches 5
+            //loop to continue playing game until 5 rounds are won
+            //return score each round
+            //for (let i = 0; i <= 5; i++) {
+                //code here
+            //}
+        }
+      
+        
         //function declareRound
         //function declareGame
 
@@ -59,8 +104,10 @@
         //if it is a tie, then there is a re-do
         //if there is a round loss, show message that states why the loss occurred. 
         //if there is a round win, show message that states why the win occurred
-        //create a way to keep track of wins and losses for each player
+        //record the winner of each round in order to keep track of wins and losses for both players
+            //create variable that records result of each round
         //first to five wins the game
+            //loop game until 5 rounds are won
         //if you win or lose the game, show message stating outcome
     </script>
 </html>
