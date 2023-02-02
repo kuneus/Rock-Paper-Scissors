@@ -15,20 +15,21 @@
             "rock", 
             "paper", 
             "scissors"
-        ];
+            ];
         function getComputerChoice(choices) {
             return choices[Math.floor(Math.random()*choices.length)];
         }
     
-        const playerSelection = prompt("Rock, paper, or scissors?","");
+        let playerSelection = prompt("Rock, paper, or scissors?","");
         let lowerCaseSelection = playerSelection.toLowerCase();
-        console.log("You played " + playerSelection); //to confirm player's choice
-        const computerSelection = getComputerChoice(choices);
-        console.log("The computer played " + computerSelection); //to confirm computer's choice
+        
+        let computerSelection = getComputerChoice(choices);
+        
 
 
         //function to play one round
         function playRound(lowerCaseSelection, computerSelection) {
+            
             if (lowerCaseSelection == "rock" && computerSelection == "scissors") {
                 return winRound;
             } else if (lowerCaseSelection == "rock" && computerSelection == "paper") {
@@ -58,24 +59,39 @@
 
 
         //function to keep track of score
-        function addScore() {
+        
+           
+        
+      
+
+        for (let i = 0; i <= 20; i++) {
+                //code here
+            let playerSelection = prompt("Rock, paper, or scissors?","");
+            let lowerCaseSelection = playerSelection.toLowerCase();
+            console.log("You played " + playerSelection); //to confirm player's choice
+            let computerSelection = getComputerChoice(choices);
+            
+            console.log("The computer played " + computerSelection); //to confirm computer's choice
+            console.log(playRound(lowerCaseSelection, computerSelection));
+
             let roundResult = playRound(lowerCaseSelection, computerSelection);
             if (roundResult == winRound) {
                 playerScore++;
-            } else if (roundResult == loseRound) {
+                } else if (roundResult == loseRound) {
                 computerScore++;
-            } else {
+                } else {
                 tieScore++;
-            }
-        }
-        
-        console.log(playRound(lowerCaseSelection, computerSelection));
-        console.log(addScore());
-        console.log("Player score: " + playerScore);
-        console.log("Computer score: " + computerScore);
-        console.log("Ties: " + tieScore);
+                }
+            console.log("Player score: " + playerScore);
+            console.log("Computer score: " + computerScore);
+            console.log("Ties: " + tieScore)
 
-        function playGame () {
+            if (playerScore == 5 || computerScore == 5) {
+            break;
+            }
+            }
+
+            
             //create function to retrieve player score
                 //function getPlayerScore =
             //create function to retrieve computer score
@@ -86,10 +102,13 @@
             //create function with 2 conditional parameters, if playerScore reaches 5 or if computerScore reaches 5
             //loop to continue playing game until 5 rounds are won
             //return score each round
-            //for (let i = 0; i <= 5; i++) {
+            //for (let i = 0; i <= 1000; i++) {
                 //code here
+                //if (playerScore == 5 || computerScore ==5) {
+                    //break;
+                //}
             //}
-        }
+        
       
         
         //function declareRound
