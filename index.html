@@ -8,7 +8,7 @@
 
     </body>
     <script>
-        console.log("Let's play rock, paper, scissors!");
+        console.log("Let's play rock, paper, scissors! First to 5 wins the game!");
         
         //functions and variables for player and computer selection
         const choices = [
@@ -19,13 +19,6 @@
         function getComputerChoice(choices) {
             return choices[Math.floor(Math.random()*choices.length)];
         }
-    
-        let playerSelection = prompt("Rock, paper, or scissors?","");
-        let lowerCaseSelection = playerSelection.toLowerCase();
-        
-        let computerSelection = getComputerChoice(choices);
-        
-
 
         //function to play one round
         function playRound(lowerCaseSelection, computerSelection) {
@@ -47,7 +40,7 @@
             } else {
                 return "Invalid input. Try again"
             }
-        }
+            }
 
         //variables to define wins, losses, and score
         const winRound = "You win this round!";
@@ -56,26 +49,18 @@
         let playerScore = 0;
         let computerScore = 0;
         let tieScore = 0;
-
-
-        //function to keep track of score
-        
-           
-        
       
-
+        //loop for game
         for (let i = 0; i <= 20; i++) {
-                //code here
             let playerSelection = prompt("Rock, paper, or scissors?","");
             let lowerCaseSelection = playerSelection.toLowerCase();
             console.log("You played " + playerSelection); //to confirm player's choice
-            let computerSelection = getComputerChoice(choices);
-            
+            let computerSelection = getComputerChoice(choices); 
             console.log("The computer played " + computerSelection); //to confirm computer's choice
-            console.log(playRound(lowerCaseSelection, computerSelection));
+            console.log(playRound(lowerCaseSelection, computerSelection)); //to play round of RPS
 
-            let roundResult = playRound(lowerCaseSelection, computerSelection);
-            if (roundResult == winRound) {
+            let roundResult = playRound(lowerCaseSelection, computerSelection); 
+            if (roundResult == winRound) { //to add score each round
                 playerScore++;
                 } else if (roundResult == loseRound) {
                 computerScore++;
@@ -84,35 +69,21 @@
                 }
             console.log("Player score: " + playerScore);
             console.log("Computer score: " + computerScore);
-            console.log("Ties: " + tieScore)
-
+            console.log("Ties: " + tieScore);
+            console.log("~~~~~~~~~~~~~~~~~~~~~~~~");
             if (playerScore == 5 || computerScore == 5) {
             break;
             }
             }
 
-            
-            //create function to retrieve player score
-                //function getPlayerScore =
-            //create function to retrieve computer score
-                //function getComputerScore =
-            //let playerScore = 
-            //let computerScore =
-            //function keepScore ()
-            //create function with 2 conditional parameters, if playerScore reaches 5 or if computerScore reaches 5
-            //loop to continue playing game until 5 rounds are won
-            //return score each round
-            //for (let i = 0; i <= 1000; i++) {
-                //code here
-                //if (playerScore == 5 || computerScore ==5) {
-                    //break;
-                //}
-            //}
-        
-      
-        
-        //function declareRound
-        //function declareGame
+        function declareGameResults (playerScore, computerScore) {
+            if (playerScore == 5) {
+            return "Congrats! You beat the computer " + playerScore + " to " + computerScore + "!";
+            } else if (computerScore == 5) {
+            return "You lost to the computer " + computerScore + " to " + playerScore + "!";
+            }
+            }
+        console.log(declareGameResults(playerScore, computerScore));
 
         //the following is pseudocode//
         //allow user to input one of three options: rock, paper, or scissors
