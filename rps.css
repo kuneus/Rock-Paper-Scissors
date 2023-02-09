@@ -1,9 +1,31 @@
+body {
+    font-family: fantasy;
+}
 
+h1 {
+    text-align: center;
+    background-color: azure;
+    padding: 30px;
+}
 
-#buttons {
+h2 {
+    text-align: center;
+    background-color: aquamarine;
+    padding: 30px;
+}
+
+.choices {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: aliceblue;
+    font-size: 20px;
+}
+.buttons {
     display: flex;
     justify-content: center;
-    background-color: aliceblue;
+    gap: 30px;
+    padding: 30px;
 }
 
 #results {
