@@ -6,8 +6,8 @@
         <link rel="stylesheet" href="rps.css">
     </head>
     <body>
-        <h1>ROCK PAPER SCISSORS</h1>
-        <h2>First to 5 wins the game</h2>
+        <div class="header">ROCK PAPER SCISSORS</div>
+        <div class="header2">First to 5 wins the game</div>
         <div class="choices">
             <div>Choose your weapon wisely:</div>
             <div class="buttons">
@@ -21,12 +21,16 @@
             <div id="results">Results</div>
             <div class="resultsContainer">
                 <div id="playerResults">Player: </div>
+                <div id="playerScore"></div>
                 <div id="computerResults">Computer: </div>
+                <div id="computerScore"></div>
             </div>
         </div>
     </body>
     <script>
-        
+        let score = "0";
+        document.getElementById('playerScore').textContent = score;
+        document.getElementById('computerScore').textContent = score;
         //functions and variables for player and computer selection
         const choices = [
             "rock", 
@@ -102,8 +106,15 @@
             }
         console.log(declareGameResults(playerScore, computerScore));
 
-        let btn = document.querySelector('#rock');
-        btn.addEventListener('click', playRound, declareGameResults);
+        let btn = document.querySelectorAll('button');
+        btn.forEach((button) => {
+        function choose() {
+        prompt("Rock, paper, scissors?", "");
+        }
+        button.addEventListener('click', choose);
+        });
+
+        
         
     
     </script>

@@ -2,16 +2,18 @@ body {
     font-family: fantasy;
 }
 
-h1 {
+.header {
     text-align: center;
     background-color: azure;
     padding: 30px;
+    font-size: 70px ;
 }
 
-h2 {
+.header2 {
     text-align: center;
     background-color: aquamarine;
     padding: 30px;
+    font-size: 40px;
 }
 
 .choices {
@@ -20,6 +22,7 @@ h2 {
     align-items: center;
     background-color: aliceblue;
     font-size: 20px;
+    padding-top: 30px;
 }
 .buttons {
     display: flex;
