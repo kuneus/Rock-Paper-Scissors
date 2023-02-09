@@ -3,9 +3,21 @@
     <head>
         <meta charset="utf-8">
         <title>Rock-Paper-Scissors</title>
+        <link rel="stylesheet" href="rps.css">
     </head>
     <body>
-
+        <h1>Rock Paper Scissors</h1>
+        <h2>First to 5 wins the game</h2>
+        <button id="rock">Rock</button>
+        <button id="paper">Paper</button>
+        <button id="scissors">Scissors</button>
+        <div class="container">
+            <div id="results">Results</div>
+            <div class="resultsContainer">
+                <div id="playerResults">Player: </div>
+                <div id="computerResults">Computer: </div>
+            </div>
+        </div>
     </body>
     <script>
         console.log("Let's play rock, paper, scissors! First to 5 wins the game!");
@@ -19,7 +31,6 @@
         function getComputerChoice(choices) {
             return choices[Math.floor(Math.random()*choices.length)];
         }
-
         //function to play one round
         function playRound(lowerCaseSelection, computerSelection) {
             
@@ -51,30 +62,31 @@
         let tieScore = 0;
       
         //loop for game
-        for (let i = 0; i <= 20; i++) {
-            let playerSelection = prompt("Rock, paper, or scissors?","");
-            let lowerCaseSelection = playerSelection.toLowerCase();
-            console.log("You played " + playerSelection); //to confirm player's choice
-            let computerSelection = getComputerChoice(choices); 
-            console.log("The computer played " + computerSelection); //to confirm computer's choice
-            console.log(playRound(lowerCaseSelection, computerSelection)); //to play round of RPS
+        //for (let i = 0; i <= 20; i++) {
+        //    let playerSelection = prompt("Rock, paper, or scissors?","");
+        //    let lowerCaseSelection = playerSelection.toLowerCase();
+        //    console.log("You played " + playerSelection); //to confirm player's choice
+        //    let computerSelection = getComputerChoice(choices); 
+        //    console.log("The computer played " + computerSelection); //to confirm computer's choice
+        //    console.log(playRound(lowerCaseSelection, computerSelection)); //to play round of RPS
 
-            let roundResult = playRound(lowerCaseSelection, computerSelection); 
-            if (roundResult == winRound) { //to add score each round
-                playerScore++;
-                } else if (roundResult == loseRound) {
-                computerScore++;
-                } else {
-                tieScore++;
-                }
-            console.log("Player score: " + playerScore);
-            console.log("Computer score: " + computerScore);
-            console.log("Ties: " + tieScore);
-            console.log("~~~~~~~~~~~~~~~~~~~~~~~~");
-            if (playerScore == 5 || computerScore == 5) {
-            break;
-            }
-            }
+        //    let roundResult = playRound(lowerCaseSelection, computerSelection); 
+        //    if (roundResult == winRound) { //to add score each round
+        //        playerScore++;
+        //        } else if (roundResult == loseRound) {
+        //        computerScore++;
+        //        } else {
+        //        tieScore++;
+        //        }
+        //    console.log("Player score: " + playerScore);
+        //    console.log("Computer score: " + computerScore);
+        //    console.log("Ties: " + tieScore);
+        //    console.log("~~~~~~~~~~~~~~~~~~~~~~~~");
+        //    if (playerScore == 5 || computerScore == 5) {
+        //    break;
+        //    }
+        //    }
+            
 
         function declareGameResults (playerScore, computerScore) {
             if (playerScore == 5) {
@@ -85,19 +97,9 @@
             }
         console.log(declareGameResults(playerScore, computerScore));
 
-        //the following is pseudocode//
-        //allow user to input one of three options: rock, paper, or scissors
-        //Computer to respond with one of three options: rock, paper, or scissors
-            //options must be case-insensitive
-        //create conditional rules: rock beats scissors, scissors beat paper, paper beats rock
-        //if same choice is made, it is a tie
-        //if it is a tie, then there is a re-do
-        //if there is a round loss, show message that states why the loss occurred. 
-        //if there is a round win, show message that states why the win occurred
-        //record the winner of each round in order to keep track of wins and losses for both players
-            //create variable that records result of each round
-        //first to five wins the game
-            //loop game until 5 rounds are won
-        //if you win or lose the game, show message stating outcome
+        let btn = document.querySelector('#rock');
+        btn.addEventListener('click', playRound, declareGameResults);
+        
+    
     </script>
 </html>
