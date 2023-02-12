@@ -17,16 +17,17 @@
             </div>
         </div>
         <div class="container">
-            <div id="selections"></div>
-            <div id="roundAnnounce"></div>
-            <div id="gameAnnounce"></div>
             <div id="score">Score</div>
             <div class="scoreContainer">
                 <div id="playerResults">Player: </div>
-                <div id="playerScore"></div>
+                <div id="playerScore">0</div>
                 <div id="computerResults">Computer: </div>
-                <div id="computerScore"></div> 
+                <div id="computerScore">0</div> 
             </div>
+            <div id="selections"></div>
+            <div id="roundAnnounce"></div>
+            <div id="gameAnnounce"></div>
+            
             
         </div>
     </body>
@@ -70,15 +71,15 @@
             }
 
         //variables to define wins, losses, and score
-        const winRound = "You win this round!";
-        const loseRound = "You lose this round!";
+        const winRound = "You WIN this round!";
+        const loseRound = "You LOSE this round!";
         const tieRound = "Tie! Try again";     
 
         function declareGameResults (playerScore, computerScore) {
             if (playerScore == 5) {
-            return "Congrats! You beat the computer " + playerScore + " to " + computerScore + "!";
+            return "WINNER! You beat the computer " + playerScore + " to " + computerScore + "!";
             } else if (computerScore == 5) {
-            return "You lost to the computer " + computerScore + " to " + playerScore + "!";
+            return "LOSER! You lost to the computer " + computerScore + " to " + playerScore + "!";
             }
             }
         console.log(declareGameResults(playerScore, computerScore));
