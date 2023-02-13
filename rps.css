@@ -1,13 +1,18 @@
 body {
     font-family:monospace;
-    background-color: bisque;
+    background-image: url(rps-bg4.png);
+    background-repeat: no-repeat;
+    background-position: 1100px 500px;
+    background-size: 500px 500px;
+    background-color: #28b4e5;
 }
 
 .header {
     text-align: center;
-    background-color: rosybrown;
+    background-color:midnightblue;
     padding: 30px;
-    font-size: 70px ;
+    font-size: 70px;
+    color: white;
 }
 
 .header2 {
@@ -32,18 +37,25 @@ body {
 }
 
 button {
-    padding: 20px;
-    border-radius: 100%;
-    background-color: rgb(228, 228, 228);
-    width: 110px;
-    height: 110px;
+    border-radius: 0%;
 }
+
+img {
+    width: 130px;
+    height: 130px;
+    border-radius: 0%;
+    mix-blend-mode: multiply;
+    object-fit:scale-down;
+   
+}
+
 
 button:hover {
     transform: scale(1.2);
     transition-duration: 200ms;
     border-color: goldenrod;
     background-color: rgb(251, 250, 250);
+    cursor:pointer;
 }
 
 #score {
@@ -73,4 +85,12 @@ button:hover {
 
 #roundAnnounce {
     font-size: 30px;
+}
+
+.footer {
+    font-size: 25px;
+    bottom: 15px;
+    position: absolute;
+    left: 15px;
+
 }
